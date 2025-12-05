@@ -1,0 +1,115 @@
+
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+<meta charset='UTF-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0'>
+<title>10-Day Oklahoma Christmas Scavenger Hunt</title>
+<style>
+    body { font-family: Arial, sans-serif; background: #f8f8f8; margin: 0; padding: 20px; }
+    h1 { text-align: center; color: #b22222; }
+    .container { display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; }
+    .card { background: white; border-radius: 8px; box-shadow: 0 2px 6px rgba(0,0,0,0.2); width: 250px; padding: 15px; text-align: center; }
+    .card button { background: #b22222; color: white; border: none; padding: 10px; border-radius: 5px; cursor: pointer; }
+    .card button:hover { background: #8b0000; }
+    .riddle { display: none; margin-top: 10px; font-style: italic; }
+    input { margin-top: 10px; padding: 8px; width: 90%; }
+    #final-message { display: none; text-align: center; margin-top: 30px; font-size: 1.5em; color: green; }
+</style>
+</head>
+<body>
+<h1>🎄 10-Day Oklahoma Christmas Scavenger Hunt 🎄</h1>
+<div class='container'>
+
+    <div class='card'>
+        <h3>Day 1</h3>
+        <button onclick="document.getElementById('riddle1').style.display='block'">Show Clue</button>
+        <div id='riddle1' class='riddle'>I’m the bird that sings in Oklahoma skies, find my name and you’ll be wise.</div>
+        <input type='text' id='answer1' placeholder='Enter your answer'>
+    </div>
+    
+    <div class='card'>
+        <h3>Day 2</h3>
+        <button onclick="document.getElementById('riddle2').style.display='block'">Show Clue</button>
+        <div id='riddle2' class='riddle'>I stand tall and shine bright, a tower in the night.</div>
+        <input type='text' id='answer2' placeholder='Enter your answer'>
+    </div>
+    
+    <div class='card'>
+        <h3>Day 3</h3>
+        <button onclick="document.getElementById('riddle3').style.display='block'">Show Clue</button>
+        <div id='riddle3' class='riddle'>Sweet and nutty, often homemade, what’s the candy that makes holidays glow?</div>
+        <input type='text' id='answer3' placeholder='Enter your answer'>
+    </div>
+    
+    <div class='card'>
+        <h3>Day 4</h3>
+        <button onclick="document.getElementById('riddle4').style.display='block'">Show Clue</button>
+        <div id='riddle4' class='riddle'>He sang about the wind sweeping down the plains.</div>
+        <input type='text' id='answer4' placeholder='Enter your answer'>
+    </div>
+    
+    <div class='card'>
+        <h3>Day 5</h3>
+        <button onclick="document.getElementById('riddle5').style.display='block'">Show Clue</button>
+        <div id='riddle5' class='riddle'>Thunder rolls, but not in the sky—what team am I?</div>
+        <input type='text' id='answer5' placeholder='Enter your answer'>
+    </div>
+    
+    <div class='card'>
+        <h3>Day 6</h3>
+        <button onclick="document.getElementById('riddle6').style.display='block'">Show Clue</button>
+        <div id='riddle6' class='riddle'>Where do millions of lights glow in Chickasha?</div>
+        <input type='text' id='answer6' placeholder='Enter your answer'>
+    </div>
+    
+    <div class='card'>
+        <h3>Day 7</h3>
+        <button onclick="document.getElementById('riddle7').style.display='block'">Show Clue</button>
+        <div id='riddle7' class='riddle'>I bloom in red, a sign of spring, but I’m rooted in Oklahoma pride.</div>
+        <input type='text' id='answer7' placeholder='Enter your answer'>
+    </div>
+    
+    <div class='card'>
+        <h3>Day 8</h3>
+        <button onclick="document.getElementById('riddle8').style.display='block'">Show Clue</button>
+        <div id='riddle8' class='riddle'>I hold Western art and cowboy tales—what museum am I?</div>
+        <input type='text' id='answer8' placeholder='Enter your answer'>
+    </div>
+    
+    <div class='card'>
+        <h3>Day 9</h3>
+        <button onclick="document.getElementById('riddle9').style.display='block'">Show Clue</button>
+        <div id='riddle9' class='riddle'>You glide on ice in downtown OKC—where am I?</div>
+        <input type='text' id='answer9' placeholder='Enter your answer'>
+    </div>
+    
+    <div class='card'>
+        <h3>Day 10</h3>
+        <button onclick="document.getElementById('riddle10').style.display='block'">Show Clue</button>
+        <div id='riddle10' class='riddle'>A holiday classic with dancers and sweets, in Oklahoma City where magic repeats—what is it?</div>
+        <input type='text' id='answer10' placeholder='Enter your answer'>
+    </div>
+    
+</div>
+<button style='display:block;margin:20px auto;padding:10px 20px;background:#228B22;color:white;border:none;border-radius:5px;font-size:1em;' onclick='checkAnswers()'>Submit All Answers</button>
+<div id='final-message'>🎉 Congratulations! The Oklahoma Christmas tradition is: <strong>OKC Nutcracker Ballet</strong> 🎉</div>
+<script>
+function checkAnswers(){
+    let correct = true;
+    let answers = ['Scissor-tailed Flycatcher','Devon Tower','Pecan Brittle','Rodgers & Hammerstein','OKC Thunder','Festival of Light','Redbud Tree','National Cowboy & Western Heritage Museum','Devon Ice Rink','OKC Nutcracker Ballet'];
+    for(let i=0;i<answers.length;i++){
+        let userAns = document.getElementById('answer'+(i+1)).value.trim();
+        if(userAns.toLowerCase() !== answers[i].toLowerCase()){
+            correct = false;
+        }
+    }
+    if(correct){
+        document.getElementById('final-message').style.display='block';
+    } else {
+        alert('Some answers are incorrect. Try again!');
+    }
+}
+</script>
+</body>
+</html>
